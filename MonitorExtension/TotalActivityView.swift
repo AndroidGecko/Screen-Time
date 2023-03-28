@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 struct TotalActivityView: View {
     var activityReport: ActivityReport
     
+    let rive = RiveViewModel(fileName: "sample")
+    
     var body: some View {
         VStack {
             Spacer(minLength: 50)
+            rive.view()
+                .frame(width: 100, height:100)
             Text("Total Screen Time")
             Spacer(minLength: 10)
             Text(activityReport.totalDuration.stringFromTimeInterval())

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DeviceActivity
+import RiveRuntime
 
 struct ChartView: View {
 
@@ -20,11 +21,16 @@ struct ChartView: View {
         users: .all,
         devices: .init([.iPhone, .iPad])
     )
+    
+    let rive = RiveViewModel(fileName: "sample")
 
     var body: some View {
-        ZStack {
-            STProgressView()
+        VStack(spacing: 10) {
+            Text("Rive View in Screen Time Extension")
             DeviceActivityReport(context, filter: filter)
+            Text("Regular Rive View")
+            rive.view()
+                .frame(width: 100, height: 100)
         }
     }
 }
