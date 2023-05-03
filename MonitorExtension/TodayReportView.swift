@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct TotalActivityView: View {
-    var activityReport: ActivityReport
+struct TodayReportView: View {
+    
+    var activityReport: ActivityReport = ActivityReport(totalDuration: 1000, apps: [], source: "initial")
     
     var body: some View {
         VStack {
-            Spacer(minLength: 50)
-            Text("Total Screen Time")
+            Text("Today Report View source: \(activityReport.source)")
             Spacer(minLength: 10)
             Text(activityReport.totalDuration.stringFromTimeInterval())
             List(activityReport.apps) { app in

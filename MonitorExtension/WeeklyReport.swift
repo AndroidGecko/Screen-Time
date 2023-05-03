@@ -12,25 +12,25 @@ extension DeviceActivityReport.Context {
     // If your app initializes a DeviceActivityReport with this context, then the system will use
     // your extension's corresponding DeviceActivityReportScene to render the contents of the
     // report.
-    static let totalActivity = Self("Total Activity")
+    static let weekly = Self("weekly")
 }
 
-struct TotalActivityReport: DeviceActivityReportScene {
+struct WeeklyReport: DeviceActivityReportScene {
     
     // Define which context your scene will represent.
-    let context: DeviceActivityReport.Context = .totalActivity
+    let context: DeviceActivityReport.Context = .weekly
     
     // Define the custom configuration and the resulting view for this report.
-    let content: (ActivityReport) -> TotalActivityView
+    let content: (ActivityReport) -> WeeklyReportView
     
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
-        // Reformat the data into a configuration that can be used to create
-        // the report's view.
+        
         var res = ""
         var list: [AppDeviceActivity] = []
         let totalActivityDuration = await data.flatMap { $0.activitySegments }.reduce(0, {
             $0 + $1.totalActivityDuration
         })
+        
         for await d in data {
             res += d.user.appleID!.debugDescription
             res += d.lastUpdatedDate.description
@@ -48,9 +48,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                 }
             }
         }
-        
-        return ActivityReport(totalDuration: totalActivityDuration, apps: list)
+    
+        return ActivityReport(totalDuration: totalActivityDuration, apps: list, source: "weekly")
     }
 }
-
-

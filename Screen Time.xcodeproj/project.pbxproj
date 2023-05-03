@@ -8,18 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		737E3E8F2886A57500ECE164 /* Screen_TimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737E3E8E2886A57500ECE164 /* Screen_TimeApp.swift */; };
-		737E3E912886A57500ECE164 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737E3E902886A57500ECE164 /* ChartView.swift */; };
+		737E3E912886A57500ECE164 /* Tab1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737E3E902886A57500ECE164 /* Tab1View.swift */; };
 		737E3E932886A57600ECE164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737E3E922886A57600ECE164 /* Assets.xcassets */; };
 		737E3E962886A57600ECE164 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737E3E952886A57600ECE164 /* Preview Assets.xcassets */; };
 		73B3B35328930ADE0079AAC4 /* MonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3B35228930ADE0079AAC4 /* MonitorExtension.swift */; };
-		73B3B35528930ADE0079AAC4 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3B35428930ADE0079AAC4 /* TotalActivityReport.swift */; };
-		73B3B35728930ADE0079AAC4 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3B35628930ADE0079AAC4 /* TotalActivityView.swift */; };
-		73B3B35C28930ADE0079AAC4 /* MonitorExtension.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 73B3B35028930ADE0079AAC4 /* MonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		73B3B35528930ADE0079AAC4 /* TodayReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3B35428930ADE0079AAC4 /* TodayReport.swift */; };
+		73B3B35728930ADE0079AAC4 /* TodayReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3B35628930ADE0079AAC4 /* TodayReportView.swift */; };
 		73B3B36128930B440079AAC4 /* AppDeviceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3B36028930B440079AAC4 /* AppDeviceActivity.swift */; };
+		C33E9D5D2A0274E900F1E90A /* Tab2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E9D5C2A0274E900F1E90A /* Tab2View.swift */; };
+		C33E9D5F2A0276E600F1E90A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E9D5E2A0276E600F1E90A /* Utils.swift */; };
+		C3A186D629F2ECCB0099D41A /* MonitorExtension.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 73B3B35028930ADE0079AAC4 /* MonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C3FD22C729F13FEB00E6B9C2 /* WeeklyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FD22C629F13FEB00E6B9C2 /* WeeklyReport.swift */; };
+		C3FD22C929F141AD00E6B9C2 /* WeeklyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FD22C829F141AD00E6B9C2 /* WeeklyReportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		73B3B35A28930ADE0079AAC4 /* PBXContainerItemProxy */ = {
+		C336195529FA7800008AABF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 737E3E832886A57500ECE164 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 737E3E8A2886A57500ECE164;
+			remoteInfo = "Screen Time";
+		};
+		C3A186D729F2ECCB0099D41A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 737E3E832886A57500ECE164 /* Project object */;
 			proxyType = 1;
@@ -39,13 +50,13 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73B3B34828930A170079AAC4 /* Embed ExtensionKit Extensions */ = {
+		C3A186D129F2D3C90099D41A /* Embed ExtensionKit Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				73B3B35C28930ADE0079AAC4 /* MonitorExtension.appex in Embed ExtensionKit Extensions */,
+				C3A186D629F2ECCB0099D41A /* MonitorExtension.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,17 +66,23 @@
 /* Begin PBXFileReference section */
 		737E3E8B2886A57500ECE164 /* Screen Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		737E3E8E2886A57500ECE164 /* Screen_TimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_TimeApp.swift; sourceTree = "<group>"; };
-		737E3E902886A57500ECE164 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		737E3E902886A57500ECE164 /* Tab1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1View.swift; sourceTree = "<group>"; };
 		737E3E922886A57600ECE164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737E3E952886A57600ECE164 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		737E3EB32886A61C00ECE164 /* Screen Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Screen Time.entitlements"; sourceTree = "<group>"; };
 		73B3B35028930ADE0079AAC4 /* MonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = MonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		73B3B35228930ADE0079AAC4 /* MonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorExtension.swift; sourceTree = "<group>"; };
-		73B3B35428930ADE0079AAC4 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
-		73B3B35628930ADE0079AAC4 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
+		73B3B35428930ADE0079AAC4 /* TodayReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayReport.swift; sourceTree = "<group>"; };
+		73B3B35628930ADE0079AAC4 /* TodayReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayReportView.swift; sourceTree = "<group>"; };
 		73B3B35828930ADE0079AAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73B3B35928930ADE0079AAC4 /* MonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorExtension.entitlements; sourceTree = "<group>"; };
 		73B3B36028930B440079AAC4 /* AppDeviceActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeviceActivity.swift; sourceTree = "<group>"; };
+		C336195129FA7800008AABF4 /* Screen TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Screen TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33E9D5C2A0274E900F1E90A /* Tab2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2View.swift; sourceTree = "<group>"; };
+		C33E9D5E2A0276E600F1E90A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C3A186A729F2C46A0099D41A /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		C3FD22C629F13FEB00E6B9C2 /* WeeklyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReport.swift; sourceTree = "<group>"; };
+		C3FD22C829F141AD00E6B9C2 /* WeeklyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +100,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C336194E29FA7800008AABF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +115,7 @@
 			children = (
 				737E3E8D2886A57500ECE164 /* Screen Time */,
 				73B3B35128930ADE0079AAC4 /* MonitorExtension */,
+				C3A186A629F2C46A0099D41A /* Frameworks */,
 				737E3E8C2886A57500ECE164 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +125,7 @@
 			children = (
 				737E3E8B2886A57500ECE164 /* Screen Time.app */,
 				73B3B35028930ADE0079AAC4 /* MonitorExtension.appex */,
+				C336195129FA7800008AABF4 /* Screen TimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +135,9 @@
 			children = (
 				737E3EB32886A61C00ECE164 /* Screen Time.entitlements */,
 				737E3E8E2886A57500ECE164 /* Screen_TimeApp.swift */,
-				737E3E902886A57500ECE164 /* ChartView.swift */,
+				737E3E902886A57500ECE164 /* Tab1View.swift */,
+				C33E9D5C2A0274E900F1E90A /* Tab2View.swift */,
+				C33E9D5E2A0276E600F1E90A /* Utils.swift */,
 				737E3E922886A57600ECE164 /* Assets.xcassets */,
 				737E3E942886A57600ECE164 /* Preview Content */,
 			);
@@ -127,14 +155,24 @@
 		73B3B35128930ADE0079AAC4 /* MonitorExtension */ = {
 			isa = PBXGroup;
 			children = (
+				C3FD22C829F141AD00E6B9C2 /* WeeklyReportView.swift */,
+				C3FD22C629F13FEB00E6B9C2 /* WeeklyReport.swift */,
 				73B3B35228930ADE0079AAC4 /* MonitorExtension.swift */,
-				73B3B35428930ADE0079AAC4 /* TotalActivityReport.swift */,
-				73B3B35628930ADE0079AAC4 /* TotalActivityView.swift */,
+				73B3B35428930ADE0079AAC4 /* TodayReport.swift */,
+				73B3B35628930ADE0079AAC4 /* TodayReportView.swift */,
 				73B3B35828930ADE0079AAC4 /* Info.plist */,
 				73B3B35928930ADE0079AAC4 /* MonitorExtension.entitlements */,
 				73B3B36028930B440079AAC4 /* AppDeviceActivity.swift */,
 			);
 			path = MonitorExtension;
+			sourceTree = "<group>";
+		};
+		C3A186A629F2C46A0099D41A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A186A729F2C46A0099D41A /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,12 +186,12 @@
 				737E3E882886A57500ECE164 /* Frameworks */,
 				737E3E892886A57500ECE164 /* Resources */,
 				737E3EB22886A5E100ECE164 /* Embed Foundation Extensions */,
-				73B3B34828930A170079AAC4 /* Embed ExtensionKit Extensions */,
+				C3A186D129F2D3C90099D41A /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				73B3B35B28930ADE0079AAC4 /* PBXTargetDependency */,
+				C3A186D829F2ECCB0099D41A /* PBXTargetDependency */,
 			);
 			name = "Screen Time";
 			productName = "Screen Time";
@@ -177,6 +215,24 @@
 			productReference = 73B3B35028930ADE0079AAC4 /* MonitorExtension.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
+		C336195029FA7800008AABF4 /* Screen TimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C336195929FA7800008AABF4 /* Build configuration list for PBXNativeTarget "Screen TimeTests" */;
+			buildPhases = (
+				C336194D29FA7800008AABF4 /* Sources */,
+				C336194E29FA7800008AABF4 /* Frameworks */,
+				C336194F29FA7800008AABF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C336195629FA7800008AABF4 /* PBXTargetDependency */,
+			);
+			name = "Screen TimeTests";
+			productName = "Screen TimeTests";
+			productReference = C336195129FA7800008AABF4 /* Screen TimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,7 +240,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					737E3E8A2886A57500ECE164 = {
@@ -192,6 +248,10 @@
 					};
 					73B3B34F28930ADE0079AAC4 = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					C336195029FA7800008AABF4 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 737E3E8A2886A57500ECE164;
 					};
 				};
 			};
@@ -210,6 +270,7 @@
 			targets = (
 				737E3E8A2886A57500ECE164 /* Screen Time */,
 				73B3B34F28930ADE0079AAC4 /* MonitorExtension */,
+				C336195029FA7800008AABF4 /* Screen TimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +292,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C336194F29FA7800008AABF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -238,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				737E3E912886A57500ECE164 /* ChartView.swift in Sources */,
+				737E3E912886A57500ECE164 /* Tab1View.swift in Sources */,
 				737E3E8F2886A57500ECE164 /* Screen_TimeApp.swift in Sources */,
+				C33E9D5D2A0274E900F1E90A /* Tab2View.swift in Sources */,
+				C33E9D5F2A0276E600F1E90A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,19 +318,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				73B3B36128930B440079AAC4 /* AppDeviceActivity.swift in Sources */,
-				73B3B35728930ADE0079AAC4 /* TotalActivityView.swift in Sources */,
+				C3FD22C729F13FEB00E6B9C2 /* WeeklyReport.swift in Sources */,
+				73B3B35728930ADE0079AAC4 /* TodayReportView.swift in Sources */,
 				73B3B35328930ADE0079AAC4 /* MonitorExtension.swift in Sources */,
-				73B3B35528930ADE0079AAC4 /* TotalActivityReport.swift in Sources */,
+				C3FD22C929F141AD00E6B9C2 /* WeeklyReportView.swift in Sources */,
+				73B3B35528930ADE0079AAC4 /* TodayReport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C336194D29FA7800008AABF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		73B3B35B28930ADE0079AAC4 /* PBXTargetDependency */ = {
+		C336195629FA7800008AABF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 737E3E8A2886A57500ECE164 /* Screen Time */;
+			targetProxy = C336195529FA7800008AABF4 /* PBXContainerItemProxy */;
+		};
+		C3A186D829F2ECCB0099D41A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 73B3B34F28930ADE0079AAC4 /* MonitorExtension */;
-			targetProxy = 73B3B35A28930ADE0079AAC4 /* PBXContainerItemProxy */;
+			targetProxy = C3A186D729F2ECCB0099D41A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

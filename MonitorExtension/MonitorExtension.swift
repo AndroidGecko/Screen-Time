@@ -10,11 +10,14 @@ import SwiftUI
 
 @main
 struct MonitorExtension: DeviceActivityReportExtension {
+    
     var body: some DeviceActivityReportScene {
-        // Create a report for each DeviceActivityReport.Context that your app supports.
-        TotalActivityReport { totalActivity in
-            return TotalActivityView(activityReport: totalActivity)
+        TodayReport { report in
+            return TodayReportView(activityReport: report)
         }
-        // Add more reports here...
+        
+        WeeklyReport { report in
+            return WeeklyReportView(activityReport: report)
+        }
     }
 }

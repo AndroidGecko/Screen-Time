@@ -10,6 +10,7 @@ import SwiftUI
 struct ActivityReport {
     let totalDuration: TimeInterval
     let apps: [AppDeviceActivity]
+    let source: String
 }
 
 struct AppDeviceActivity: Identifiable {

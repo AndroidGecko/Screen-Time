@@ -12,27 +12,34 @@ import FamilyControls
 @main
 struct Screen_TimeApp: App {
     let center = AuthorizationCenter.shared
-    @State var show = false
+    
+    let tab1 = Tab1View()
+    let tab2 = Tab2View()
     
     var body: some Scene {
         WindowGroup {
-            VStack {
-                if show {
-                    ChartView()
-                } else {
-                    STProgressView()
+            TabView {
+                VStack {
+                    tab1
+                }
+                .tabItem {
+                    Label("Tab 1", systemImage: "1.circle.fill")
+                }
+                VStack {
+                    tab2
+                }
+                .tabItem {
+                    Label("Tab 2", systemImage: "2.circle.fill")
                 }
             }.onAppear {
                 Task {
                     do {
                         try await center.requestAuthorization(for: FamilyControlsMember.individual)
-                        show = true
                     } catch {
                         // Handle the error here.
                     }
                 }
             }
-            
         }
     }
 }
