@@ -13,24 +13,17 @@ import FamilyControls
 struct Screen_TimeApp: App {
     let center = AuthorizationCenter.shared
     
-    let tab1 = Tab1View()
-    let tab2 = Tab2View()
-    
     var body: some Scene {
         WindowGroup {
             TabView {
-                VStack {
-                    tab1
-                }
-                .tabItem {
-                    Label("Tab 1", systemImage: "1.circle.fill")
-                }
-                VStack {
-                    tab2
-                }
-                .tabItem {
-                    Label("Tab 2", systemImage: "2.circle.fill")
-                }
+                Tab1View()
+                    .tabItem {
+                        Label("Tab 1", systemImage: "1.circle.fill")
+                    }
+                Tab2View()
+                    .tabItem {
+                        Label("Tab 2", systemImage: "2.circle.fill")
+                    }
             }.onAppear {
                 Task {
                     do {
@@ -40,14 +33,6 @@ struct Screen_TimeApp: App {
                     }
                 }
             }
-        }
-    }
-}
-
-struct STProgressView: View {
-    var body: some View {
-        ProgressView {
-            Text("Loading")
         }
     }
 }
